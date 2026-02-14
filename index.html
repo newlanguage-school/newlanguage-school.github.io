@@ -1,14 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Wipa Thai School</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>New Language School</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #0ea5e9;
+  --secondary: #22c55e;
+  --dark: #0f172a;
+  --light: #f8fafc;
+  --muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #f0f9ff, #ffffff);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* ---------- LANGUAGE PICKER ---------- */
+
+.lang-btn {
+  background: white;
+  padding: 10px 14px;
+  border-radius: 14px;
+
+  /* smooth custom border */
+  border: 1.5px solid rgba(14, 165, 233, 0.25);
+
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.12),
+    inset 0 0 0 0.5px rgba(255,255,255,0.6);
+
+  transition: all 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lang-btn:hover {
+  border-color: rgba(14, 165, 233, 0.5);
+  transform: translateY(-1px);
+}
+
+.lang-btn:active {
+  transform: scale(0.97);
+  box-shadow:
+    0 6px 14px rgba(0,0,0,0.15);
+}
+
+.lang-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.lang-btn {
+  background: white;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.lang-menu {
+  margin-top: 8px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  overflow: hidden;
+  display: none;
+}
+
+.lang-menu div {
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.lang-menu div:hover {
+  background: #f1f5f9;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 auto 20px;
+}
+
+header h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  padding: 70px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.section-desc {
+  color: var(--muted);
+  margin-bottom: 40px;
+  max-width: 700px;
+}
+
+/* ---------- HISTORY ---------- */
+.history-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+/* ---------- SERVICES ---------- */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.service {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+}
+
+.service h3 {
+  margin-bottom: 10px;
+}
+
+.service {
+  transition: transform 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-6px);
+}
+
+/* ---------- GALLERY ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.gallery img {
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: translateY(-6px);
+}
+
+/* ---------- MAP ---------- */
+.map-container iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  border-radius: 20px;
+}
+
+/* ---------- CONTACT ---------- */
+.contact-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+.contact-card p {
+  margin-bottom: 10px;
+}
+
+/* ---------- WHATSAPP ---------- */
+.whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--muted);
+  font-size: 14px;
+}
+</style>
 </head>
+
 <body>
 
-    <h1>Welcome to Wipa Thai School</h1>
-    <p>Learn Thai language with a native Thai teacher.</p>
+<!-- LANGUAGE SWITCH -->
+<div class="lang-switch">
+  <button class="lang-btn" onclick="toggleLang()" type="button">
+  🌐 <span id="langLabel">EN</span>
+</button>
+  <div class="lang-menu" id="langMenu">
+    <div onclick="setLang('en')">🇬🇧 English</div>
+    <div onclick="setLang('th')">🇹🇭 ไทย</div>
+    <div onclick="setLang('ru')">🇷🇺 Русский</div>
+    <div onclick="setLang('fr')">🇫🇷 Français</div>
+  </div>
+</div>
+
+<header>
+  <img src="img/logo.png" alt="New Language School Logo" class="logo">
+
+  <h1 data-i18n="title">New Language School</h1>
+<p data-i18n="subtitle">
+  Modern Thai & English language school in Koh Samui.
+</p>
+</header>
+
+<section>
+  <h2 data-i18n="storyTitle">Our Story</h2>
+<p class="section-desc" data-i18n="storyDesc">
+  Built on passion for languages and cultural exchange.
+</p>
+<div class="history-card" data-i18n="storyText">
+  We help students speak confidently in real life.
+</div>
+</section>
+
+<section>
+  <h2 data-i18n="servicesTitle">Our Services</h2>
+<p class="section-desc" data-i18n="servicesDesc">
+  Flexible programs for all levels.
+</p>
+  <div class="services">
+    <div class="service"><h3 data-i18n="s1">🇹🇭 Thai Language</h3>
+<p data-i18n="s1d">Daily life, work and travel Thai.</p>
+</div>
+    <div class="service"><h3 data-i18n="s2"></h3><p data-i18n="s2d"></p></div>
+    <div class="service"><h3 data-i18n="s3"></h3><p data-i18n="s3d"></p></div>
+    <div class="service"><h3 data-i18n="s4"></h3><p data-i18n="s4d"></p></div>
+  </div>
+</section>
+
+<section>
+ <h2 data-i18n="galleryTitle">Gallery</h2>
+<p class="section-desc" data-i18n="galleryDesc">
+  Our school & students.
+</p>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
+  </div>
+</section>
+
+<section>
+<h2 data-i18n="locationTitle">Location</h2>
+<p class="section-desc" data-i18n="locationDesc">
+  Visit us in Koh Samui.
+</p>
+
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps?q=Koh%20Samui&output=embed"></iframe>
+  </div>
+</section>
+
+<section>
+ <h2 data-i18n="contactTitle">Contact Us</h2>
+  <div class="contact-card">
+    <p>📍 Koh Samui, Thailand</p>
+    <p>📧 <a href="mailto:info@samuanguageschool.com">info@samuanguageschool.com</a></p>
+    <p>📞 +66 90 000 0000</p>
+  </div>
+</section>
+
+<div class="whatsapp" onclick="openWhatsApp()">💬</div>
+
+<footer data-i18n="footer">
+  © 2026 New Language School
+</footer>
+
+<script>
+const t = {
+  en: {
+    title:"New Language School",
+    subtitle:"Modern Thai & English language school in Koh Samui.",
+    storyTitle:"Our Story",
+    storyDesc:"Built on passion for languages and cultural exchange.",
+    storyText:"We help students speak confidently in real life.",
+    servicesTitle:"Our Services",
+    servicesDesc:"Flexible programs for all levels.",
+    s1:"🇹🇭 Thai Language", s1d:"Daily life, work and travel Thai.",
+    s2:"🇬🇧 English Language", s2d:"Conversation and exams.",
+    s3:"👩‍🏫 Private Classes", s3d:"One-on-one lessons.",
+    s4:"🏫 Group Classes", s4d:"Small interactive groups.",
+    galleryTitle:"Gallery",
+    galleryDesc:"Our school & students.",
+    locationTitle:"Location",
+    locationDesc:"Visit us in Koh Samui.",
+    contactTitle:"Contact Us",
+    footer:"© 2026 New Language School"
+  },
+  th: {
+    title:"โรงเรียนสอนภาษาสมุย",
+    subtitle:"โรงเรียนภาษาไทยและอังกฤษในเกาะสมุย",
+    storyTitle:"เรื่องราวของเรา",
+    storyDesc:"สร้างจากความรักในภาษา",
+    storyText:"ช่วยให้คุณสื่อสารอย่างมั่นใจ",
+    servicesTitle:"บริการของเรา",
+    servicesDesc:"หลักสูตรยืดหยุ่น",
+    s1:"🇹🇭 ภาษาไทย", s1d:"ใช้ในชีวิตประจำวัน",
+    s2:"🇬🇧 ภาษาอังกฤษ", s2d:"สนทนาและสอบ",
+    s3:"👩‍🏫 เรียนส่วนตัว", s3d:"ตัวต่อตัว",
+    s4:"🏫 เรียนกลุ่ม", s4d:"กลุ่มเล็ก",
+    galleryTitle:"แกลเลอรี่",
+    galleryDesc:"บรรยากาศโรงเรียน",
+    locationTitle:"ที่ตั้ง",
+    locationDesc:"เกาะสมุย",
+    contactTitle:"ติดต่อเรา",
+    footer:"© 2026 New Language School"
+  },
+  ru: {
+    title:"Языковая школа Самуи",
+    subtitle:"Современная школа тайского и английского",
+    storyTitle:"Наша история",
+    storyDesc:"Любовь к языкам",
+    storyText:"Мы помогаем говорить уверенно",
+    servicesTitle:"Наши услуги",
+    servicesDesc:"Для всех уровней",
+    s1:"🇹🇭 Тайский язык", s1d:"Для жизни и работы",
+    s2:"🇬🇧 Английский язык", s2d:"Разговор и экзамены",
+    s3:"👩‍🏫 Индивидуально", s3d:"Один на один",
+    s4:"🏫 Группы", s4d:"Малые группы",
+    galleryTitle:"Галерея",
+    galleryDesc:"Наша школа",
+    locationTitle:"Локация",
+    locationDesc:"Ко Самуи",
+    contactTitle:"Контакты",
+    footer:"© 2026 New Language School"
+  },
+  fr: {
+    title:"École de Langues Samui",
+    subtitle:"École moderne de thaï et d’anglais à Koh Samui.",
+    storyTitle:"Notre Histoire",
+    storyDesc:"Construite sur la passion des langues et des échanges culturels.",
+    storyText:"Nous aidons les étudiants à parler avec confiance dans la vie réelle.",
+    servicesTitle:"Nos Services",
+    servicesDesc:"Programmes flexibles pour tous les niveaux.",
+    s1:"🇹🇭 Langue Thaïe", s1d:"Thaï pour la vie quotidienne, le travail et les voyages.",
+    s2:"🇬🇧 Langue Anglaise", s2d:"Conversation et examens.",
+    s3:"👩‍🏫 Cours Privés", s3d:"Leçons individuelles.",
+    s4:"🏫 Cours en Groupe", s4d:"Petits groupes interactifs.",
+    galleryTitle:"Galerie",
+    galleryDesc:"Notre école et nos étudiants.",
+    locationTitle:"Localisation",
+    locationDesc:"Venez nous rendre visite à Koh Samui.",
+    contactTitle:"Contactez-nous",
+    footer:"© 2026 École de Langues Samui"
+  }
+};
+
+function setLang(l){
+  document.querySelectorAll("[data-i18n]").forEach(e=>{
+    e.textContent = t[l][e.dataset.i18n];
+  });
+  document.getElementById("langLabel").textContent = l.toUpperCase();
+  document.getElementById("langMenu").style.display="none";
+}
+
+function toggleLang(){
+  const m=document.getElementById("langMenu");
+  m.style.display=m.style.display==="block"?"none":"block";
+}
+
+function openWhatsApp(){
+  window.open("https://wa.me/66900000000","_blank");
+}
+
+setLang("en");
+</script>
 
 </body>
 </html>
