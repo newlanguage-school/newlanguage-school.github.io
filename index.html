@@ -151,6 +151,11 @@ section h2 {
   border-radius: 20px;
   padding: 30px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  margin-bottom: 24px;   /* 👈 เพิ่มบรรทัดนี้ */
+}
+
+.history-card:last-child {
+  margin-bottom: 0;
 }
 
 /* ---------- SERVICES ---------- */
@@ -279,19 +284,9 @@ footer {
 
   <h1 data-i18n="title">New Language School</h1>
 <p data-i18n="subtitle">
-  Modern Thai & English language school in Koh Samui.
+  Learn Thai, English & Chinese in Koh Samui
 </p>
 </header>
-
-<section>
-  <h2 data-i18n="storyTitle">Our Story</h2>
-<p class="section-desc" data-i18n="storyDesc">
-  Built on passion for languages and cultural exchange.
-</p>
-<div class="history-card" data-i18n="storyText">
-  We help students speak confidently in real life.
-</div>
-</section>
 
 <section>
   <h2 data-i18n="servicesTitle">Our Services</h2>
@@ -303,10 +298,29 @@ footer {
 <p data-i18n="s1d">Daily life, work and travel Thai.</p>
 </div>
     <div class="service"><h3 data-i18n="s2"></h3><p data-i18n="s2d"></p></div>
+    <div class="service"><h3 data-i18n="s5"></h3><p data-i18n="s5d"></p></div>
     <div class="service"><h3 data-i18n="s3"></h3><p data-i18n="s3d"></p></div>
     <div class="service"><h3 data-i18n="s4"></h3><p data-i18n="s4d"></p></div>
   </div>
 </section>
+
+<section>
+  <h2 data-i18n="storyTitle">Our History</h2>
+<p class="section-desc" data-i18n="storyDesc">
+  Founded in 2013, the school was brought to life through the vision of Suthanya Hongkham and Wipawan Hongkham. Since its inception, the institution has been committed to providing exceptional language education, empowering students to succeed, and contributing positively to the local community.
+</p>
+<div class="history-card" data-i18n="storyText1">
+  We help students speak confidently in real-life situations.
+</div>
+<div class="history-card" data-i18n="storyText2">
+  We help students communicate confidently and effectively in real-life situations.
+</div>
+<div class="history-card" data-i18n="storyText3">
+  Our goal is to build students’ confidence so they can speak naturally and succeed in everyday conversations.
+</div>
+</section>
+
+
 
 <section>
  <h2 data-i18n="galleryTitle">Gallery</h2>
@@ -374,14 +388,17 @@ footer {
 const t = {
   en: {
     title:"New Language School",
-    subtitle:"Modern Thai & English language school in Koh Samui.",
-    storyTitle:"Our Story",
-    storyDesc:"Built on passion for languages and cultural exchange.",
-    storyText:"We help students speak confidently in real life.",
+    subtitle:"Learn Thai, English & Chinese in Koh Samui",
+    storyTitle:"Our History",
+    storyDesc:"Founded in 2013, the school was brought to life through the vision of Suthanya Hongkham and Wipawan Hongkham. Since its inception, the institution has been committed to providing exceptional language education, empowering students to succeed, and contributing positively to the local community.",
+    storyText1: "We help students speak confidently in real-life situations.",
+    storyText2: "We help students communicate confidently and effectively in real-life situations.",
+    storyText3: "Our goal is to build students’ confidence so they can speak naturally and succeed in everyday conversations.",
     servicesTitle:"Our Services",
     servicesDesc:"Flexible programs for all levels.",
     s1:"🇹🇭 Thai Language", s1d:"Daily life, work and travel Thai.",
     s2:"🇬🇧 English Language", s2d:"Conversation and exams.",
+    s5:"🇨🇳 Chinese Language", s5d:"Practical Mandarin for daily life and business.",
     s3:"👩‍🏫 Private Classes", s3d:"One-on-one lessons.",
     s4:"🏫 Group Classes", s4d:"Small interactive groups.",
     galleryTitle:"Gallery",
@@ -393,10 +410,12 @@ const t = {
   },
   th: {
     title:"โรงเรียนสอนภาษา นิวแลงเกวจ",
-    subtitle:"โรงเรียนภาษาไทยและอังกฤษในเกาะสมุย",
-    storyTitle:"เรื่องราวของเรา",
-    storyDesc:"สร้างจากความรักในภาษา",
-    storyText:"ช่วยให้คุณสื่อสารอย่างมั่นใจ",
+    subtitle:"เรียนภาษาไทย ภาษาอังกฤษ และภาษาจีน ที่เกาะสมุย",
+    storyTitle:"ประวัติของโรงเรียน",
+    storyDesc:"ก่อตั้งขึ้นในปี 2556 โรงเรียนแห่งนี้ถือกำเนิดจากวิสัยทัศน์ของคุณสุธัญญา หงษ์คำ และคุณวิพาวัลย์ หงษ์คำ นับตั้งแต่เริ่มก่อตั้ง สถาบันมุ่งมั่นในการมอบการศึกษาด้านภาษาอย่างมีคุณภาพ เสริมสร้างศักยภาพให้ผู้เรียนประสบความสำเร็จ และมีส่วนร่วมในการพัฒนาชุมชนท้องถิ่นอย่างยั่งยืน",
+    storyText1:"เราช่วยให้นักเรียนพูดได้อย่างมั่นใจในสถานการณ์จริง",
+    storyText2:"เราช่วยให้นักเรียนสื่อสารได้อย่างมั่นใจและมีประสิทธิภาพในชีวิตจริง",
+    storyText3:"เป้าหมายของเราคือสร้างความมั่นใจให้นักเรียน เพื่อให้สามารถพูดได้อย่างเป็นธรรมชาติในบทสนทนาประจำวัน",
     servicesTitle:"บริการของเรา",
     servicesDesc:"หลักสูตรยืดหยุ่น",
     s1:"🇹🇭 ภาษาไทย", s1d:"ใช้ในชีวิตประจำวัน",
@@ -411,13 +430,15 @@ const t = {
     footer:"© 2026 New Language School"
   },
   ru: {
-    title:"Языковая школа Самуи",
-    subtitle:"Современная школа тайского и английского",
+    title:"New Language School",
+    subtitle:"Изучайте тайский, английский и китайский языки на Самуи",
     storyTitle:"Наша история",
-    storyDesc:"Любовь к языкам",
-    storyText:"Мы помогаем говорить уверенно",
+    storyDesc:"Основанная в 2013 году, школа была создана благодаря видению Suthanya Hongkham и Wipawan Hongkham. С момента своего основания учреждение стремится предоставлять высококачественное языковое образование, помогать студентам добиваться успеха и вносить положительный вклад в развитие местного сообщества.",
+    storyText1:"Мы помогаем студентам уверенно говорить в реальных жизненных ситуациях.",
+    storyText2:"Мы помогаем студентам общаться уверенно и эффективно в повседневной жизни.",
+    storyText3:"Наша цель — развить уверенность студентов, чтобы они могли естественно говорить и успешно общаться каждый день.",
     servicesTitle:"Наши услуги",
-    servicesDesc:"Для всех уровней",
+    servicesDesc:"Гибкие программы для всех уровней",
     s1:"🇹🇭 Тайский язык", s1d:"Для жизни и работы",
     s2:"🇬🇧 Английский язык", s2d:"Разговор и экзамены",
     s3:"👩‍🏫 Индивидуально", s3d:"Один на один",
@@ -430,14 +451,16 @@ const t = {
     footer:"© 2026 New Language School"
   },
   fr: {
-    title:"École de Langues Samui",
-    subtitle:"École moderne de thaï et d’anglais à Koh Samui.",
+    title:"New Language School",
+    subtitle:"Apprenez le Thaï, l’Anglais et le Chinois à Koh Samui",
     storyTitle:"Notre Histoire",
-    storyDesc:"Construite sur la passion des langues et des échanges culturels.",
-    storyText:"Nous aidons les étudiants à parler avec confiance dans la vie réelle.",
+    storyDesc:"Fondée en 2013 à l’initiative de Suthanya Hongkham et Wipawan Hongkham, l’école s’est donnée pour mission de proposer un enseignement linguistique de haute qualité. Elle accompagne ses étudiants vers la réussite académique et personnelle tout en contribuant activement au développement de la communauté locale.",
+    storyText1:"Nous aidons les étudiants à parler avec confiance dans des situations réelles.",
+    storyText2:"Nous aidons les étudiants à communiquer avec assurance et efficacité dans la vie quotidienne.",
+    storyText3:"Notre objectif est de développer la confiance des étudiants afin qu’ils puissent parler naturellement et réussir leurs conversations quotidiennes.",
     servicesTitle:"Nos Services",
     servicesDesc:"Programmes flexibles pour tous les niveaux.",
-    s1:"🇹🇭 Langue Thaïe", s1d:"Thaï pour la vie quotidienne, le travail et les voyages.",
+    s1:"🇹🇭 Langue Thaï", s1d:"Thaï pour la vie quotidienne, le travail et les voyages.",
     s2:"🇬🇧 Langue Anglaise", s2d:"Conversation et examens.",
     s3:"👩‍🏫 Cours Privés", s3d:"Leçons individuelles.",
     s4:"🏫 Cours en Groupe", s4d:"Petits groupes interactifs.",
@@ -446,7 +469,7 @@ const t = {
     locationTitle:"Localisation",
     locationDesc:"Venez nous rendre visite à Koh Samui.",
     contactTitle:"Contactez-nous",
-    footer:"© 2026 École de Langues Samui"
+    footer:"© 2026 New Language School"
   }
 };
 
