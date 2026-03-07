@@ -67,6 +67,7 @@ body {
   top: 20px;
   right: 20px;
   z-index: 1000;
+  width: fit-content;
 }
 
 .lang-btn {
@@ -79,12 +80,17 @@ body {
 }
 
 .lang-menu {
-  margin-top: 8px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+
   background: white;
   border-radius: 14px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   overflow: hidden;
+
   display: none;
+  min-width: 180px;
 }
 
 .lang-menu div {
@@ -106,7 +112,6 @@ header {
   width: 250px;
   height: 250px;
   border-radius: 24px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,7 +198,7 @@ section h2 {
 
 .gallery img {
   width: 100%;
-  height: 200px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 16px;
 }
@@ -214,7 +219,7 @@ section h2 {
   border-radius: 20px;
 }
 
-<!-- ---------- CONTACT ---------- -->
+/* ---------- CONTACT ---------- */
 .contact-card {
   background: white;
   padding: 30px;
@@ -310,10 +315,10 @@ footer {
   Founded in 2013, the school was brought to life through the vision of Suthanya Hongkham and Wipawan Hongkham. Since its inception, the institution has been committed to providing exceptional language education, empowering students to succeed, and contributing positively to the local community.
 </p>
 <div class="history-card" data-i18n="storyText1">
-  We help students speak confidently in real-life situations.
+  We teach practical communication skills in Thai and other languages.
 </div>
 <div class="history-card" data-i18n="storyText2">
-  We help students communicate confidently and effectively in real-life situations.
+  We help students speak, read and write confidently in real-life situations.
 </div>
 <div class="history-card" data-i18n="storyText3">
   Our goal is to build students’ confidence so they can speak naturally and succeed in everyday conversations.
@@ -328,10 +333,10 @@ footer {
   Our school & students.
 </p>
   <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
-    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
-    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
+    <img src="img/jessy.jpg">
+    <img src="img/wipa.jpg">
+    <img src="img/kek.jpg">
+    <img src="img/nok.jpg">
   </div>
 </section>
 
@@ -360,7 +365,7 @@ footer {
     </p>
 
     <p>📞 
-      <a href="tel:+66637614664">+66 63 761 4664</a>
+      <a href="tel:+66637614664">+66 80 173 1567</a>
     </p>
 
     <p>📞 
@@ -391,8 +396,8 @@ const t = {
     subtitle:"Learn Thai, English & Chinese in Koh Samui",
     storyTitle:"Our History",
     storyDesc:"Founded in 2013, the school was brought to life through the vision of Suthanya Hongkham and Wipawan Hongkham. Since its inception, the institution has been committed to providing exceptional language education, empowering students to succeed, and contributing positively to the local community.",
-    storyText1: "We help students speak confidently in real-life situations.",
-    storyText2: "We help students communicate confidently and effectively in real-life situations.",
+    storyText1: "We teach practical communication skills in Thai and other languages.",
+    storyText2: "We help students speak, read and write confidently in real-life situations.",
     storyText3: "Our goal is to build students’ confidence so they can speak naturally and succeed in everyday conversations.",
     servicesTitle:"Our Services",
     servicesDesc:"Flexible programs for all levels.",
@@ -413,8 +418,8 @@ const t = {
     subtitle:"เรียนภาษาไทย ภาษาอังกฤษ และภาษาจีน ที่เกาะสมุย",
     storyTitle:"ประวัติของโรงเรียน",
     storyDesc:"ก่อตั้งขึ้นในปี 2556 โรงเรียนแห่งนี้ถือกำเนิดจากวิสัยทัศน์ของคุณสุธัญญา หงษ์คำ และคุณวิพาวัลย์ หงษ์คำ นับตั้งแต่เริ่มก่อตั้ง สถาบันมุ่งมั่นในการมอบการศึกษาด้านภาษาอย่างมีคุณภาพ เสริมสร้างศักยภาพให้ผู้เรียนประสบความสำเร็จ และมีส่วนร่วมในการพัฒนาชุมชนท้องถิ่นอย่างยั่งยืน",
-    storyText1:"เราช่วยให้นักเรียนพูดได้อย่างมั่นใจในสถานการณ์จริง",
-    storyText2:"เราช่วยให้นักเรียนสื่อสารได้อย่างมั่นใจและมีประสิทธิภาพในชีวิตจริง",
+    storyText1:"เราสอนทักษะการสื่อสารที่ใช้ได้จริง ทั้งภาษาอังกฤษ จีน และภาษาอื่น ๆ",
+    storyText2:"เราช่วยให้นักเรียนสามารถพูด อ่าน และเขียนได้อย่างมั่นใจในสถานการณ์จริงในชีวิตประจำวัน",
     storyText3:"เป้าหมายของเราคือสร้างความมั่นใจให้นักเรียน เพื่อให้สามารถพูดได้อย่างเป็นธรรมชาติในบทสนทนาประจำวัน",
     servicesTitle:"บริการของเรา",
     servicesDesc:"หลักสูตรยืดหยุ่น",
@@ -434,8 +439,8 @@ const t = {
     subtitle:"Изучайте тайский, английский и китайский языки на Самуи",
     storyTitle:"Наша история",
     storyDesc:"Основанная в 2013 году, школа была создана благодаря видению Suthanya Hongkham и Wipawan Hongkham. С момента своего основания учреждение стремится предоставлять высококачественное языковое образование, помогать студентам добиваться успеха и вносить положительный вклад в развитие местного сообщества.",
-    storyText1:"Мы помогаем студентам уверенно говорить в реальных жизненных ситуациях.",
-    storyText2:"Мы помогаем студентам общаться уверенно и эффективно в повседневной жизни.",
+    storyText1:"Мы обучаем практическим навыкам общения на тайском и других языках.",
+    storyText2:"Мы помогаем студентам уверенно говорить, читать и писать в реальных жизненных ситуациях.",
     storyText3:"Наша цель — развить уверенность студентов, чтобы они могли естественно говорить и успешно общаться каждый день.",
     servicesTitle:"Наши услуги",
     servicesDesc:"Гибкие программы для всех уровней",
@@ -455,8 +460,8 @@ const t = {
     subtitle:"Apprenez le Thaï, l’Anglais et le Chinois à Koh Samui",
     storyTitle:"Notre Histoire",
     storyDesc:"Fondée en 2013 à l’initiative de Suthanya Hongkham et Wipawan Hongkham, l’école s’est donnée pour mission de proposer un enseignement linguistique de haute qualité. Elle accompagne ses étudiants vers la réussite académique et personnelle tout en contribuant activement au développement de la communauté locale.",
-    storyText1:"Nous aidons les étudiants à parler avec confiance dans des situations réelles.",
-    storyText2:"Nous aidons les étudiants à communiquer avec assurance et efficacité dans la vie quotidienne.",
+    storyText1:"Nous enseignons des compétences de communication pratiques en thaï et dans d’autres langues.",
+    storyText2:"Nous aidons les étudiants à parler, lire et écrire avec confiance dans des situations de la vie réelle.",
     storyText3:"Notre objectif est de développer la confiance des étudiants afin qu’ils puissent parler naturellement et réussir leurs conversations quotidiennes.",
     servicesTitle:"Nos Services",
     servicesDesc:"Programmes flexibles pour tous les niveaux.",
