@@ -221,6 +221,15 @@ section h2 {
 }
 
 /* ---------- CONTACT ---------- */
+
+.icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 12px;
+  color: #0ea5e9;
+  flex-shrink: 0;
+}
+
 .contact-section {
   padding: 80px 20px;
   text-align: center;
@@ -416,34 +425,33 @@ loading="lazy">
 
   <div class="contact-card">
 
-   <div class="contact-item">
-  <span class="icon">📍</span>
-  <a href="https://maps.google.com/?q=New+Language+School+Koh+Samui"
-     target="_blank"
-     class="contact-address">
-     123/152 Moo 1, Bophut, Koh Samui, Surat Thani 84320, Thailand
-  </a>
-</div>
+    <div class="contact-item">
+      <img src="img/location.svg" class="icon" alt="Location">
+      <a href="https://maps.google.com/?q=New+Language+School+Koh+Samui"
+         target="_blank"
+         class="contact-address">
+         123/152 Moo 1, Bophut, Koh Samui, Surat Thani 84320, Thailand
+      </a>
+    </div>
 
     <div class="contact-item">
-      <span class="icon">📧</span>
+      <img src="img/email.svg" class="icon" alt="Location">
       <a href="mailto:anewlanguagesamui@gmail.com">
         anewlanguagesamui@gmail.com
       </a>
     </div>
 
     <div class="contact-item">
-      <span class="icon">📞</span>
+      <img src="img/phone.svg" class="icon" alt="Location">
       <a href="tel:+66801731567">+66 80 173 1567</a>
     </div>
 
     <div class="contact-item">
-      <span class="icon">📞</span>
+      <img src="img/smartphone.svg" class="icon" alt="Location">
       <a href="tel:+6677426981">+66 77 426 981</a>
     </div>
 
   </div>
-
 </section>
 
 <div class="whatsapp-float" onclick="openWhatsApp()">💬</div>
@@ -558,7 +566,7 @@ function toggleLang(){
 }
 
 function openWhatsApp(){
-  window.open("https://wa.me/66900000000","_blank");
+  window.open("https://wa.me/+66801731567","_blank");
 }
 
 setLang("en");
