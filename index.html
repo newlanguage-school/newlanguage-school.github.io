@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>New Language School</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root {
   --primary: #0ea5e9;
@@ -21,7 +23,7 @@
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -31,6 +33,14 @@ body {
 }
 
 /* ---------- LANGUAGE PICKER ---------- */
+
+.flag{
+  width:28px;
+  height:26;
+  margin-right:8px;
+  vertical-align:middle;
+  border-radius:3px;
+}
 
 .lang-btn {
   background: white;
@@ -262,11 +272,15 @@ section h2 {
   display: flex;
   align-items: center;
   gap: 6px;
-
   font-size: 18px;
   padding: 12px 0;
-
   border-bottom: 1px solid #eee;
+
+  transition: transform 0.2s ease;
+}
+
+.contact-item:hover {
+  transform: scale(1.015);
 }
 
 .contact-item:last-child {
@@ -293,6 +307,11 @@ section h2 {
 }
 
 /* ---------- WHATSAPP ---------- */
+.whatsapp-icon {
+  width: 28px;
+  height: 28px;
+}
+
 .whatsapp-float {
   position: fixed;
   bottom: 30px;
@@ -339,10 +358,18 @@ footer {
   🌐 <span id="langLabel">EN</span>
 </button>
   <div class="lang-menu" id="langMenu">
-    <div onclick="setLang('en')">🇬🇧 English</div>
-    <div onclick="setLang('th')">🇹🇭 ไทย</div>
-    <div onclick="setLang('ru')">🇷🇺 Русский</div>
-    <div onclick="setLang('fr')">🇫🇷 Français</div>
+     <div onclick="setLang('en')">
+      <img src="img/flags/gb.svg" class="flag"> English
+    </div>
+    <div onclick="setLang('th')">
+      <img src="img/flags/th.svg" class="flag"> ไทย
+    </div>
+    <div onclick="setLang('ru')">
+      <img src="img/flags/ru.svg" class="flag"> Русский
+    </div>
+    <div onclick="setLang('fr')">
+      <img src="img/flags/fr.svg" class="flag"> Français
+    </div>
   </div>
 </div>
 
@@ -454,7 +481,9 @@ loading="lazy">
   </div>
 </section>
 
-<div class="whatsapp-float" onclick="openWhatsApp()">💬</div>
+<div class="whatsapp-float" onclick="openWhatsApp()">
+  <img src="img/chat.svg" class="whatsapp-icon" alt="Chat">
+</div>
 
 <footer data-i18n="footer">
   © 2026 New Language School
