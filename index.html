@@ -34,12 +34,30 @@ body {
 
 /* ---------- LANGUAGE PICKER ---------- */
 
-.flag{
-  width:28px;
-  height:26;
-  margin-right:8px;
-  vertical-align:middle;
-  border-radius:3px;
+.fade-out {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.35s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.35s ease;
+}
+
+.flag {
+  width: 28px;
+  height: 18px;
+
+  margin-right: 8px;
+  vertical-align: middle;
+
+  border-radius: 3px;
+  object-fit: cover; /* prevents distortion */
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.06);
 }
 
 .lang-btn {
@@ -582,11 +600,34 @@ const t = {
 };
 
 function setLang(l){
-  document.querySelectorAll("[data-i18n]").forEach(e=>{
-    e.textContent = t[l][e.dataset.i18n];
+  const elements = document.querySelectorAll("[data-i18n]");
+
+  // Fade OUT
+  elements.forEach(el => {
+    el.classList.remove("fade-in");
+    el.classList.add("fade-out");
   });
-  document.getElementById("langLabel").textContent = l.toUpperCase();
-  document.getElementById("langMenu").style.display="none";
+
+  setTimeout(() => {
+
+    // Change text
+    elements.forEach(el => {
+      el.textContent = t[l][el.dataset.i18n];
+    });
+
+    document.getElementById("langLabel").textContent = l.toUpperCase();
+
+    // Small delay before fade IN (IMPORTANT)
+    setTimeout(() => {
+      elements.forEach(el => {
+        el.classList.remove("fade-out");
+        el.classList.add("fade-in");
+      });
+    }, 50);
+
+  }, 250); // match CSS duration
+
+  document.getElementById("langMenu").style.display = "none";
 }
 
 function toggleLang(){
