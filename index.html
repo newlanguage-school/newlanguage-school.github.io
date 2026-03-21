@@ -193,9 +193,38 @@ section h2 {
 }
 
 /* ---------- SERVICES ---------- */
+.service-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Animate BOTH flag + text together */
+.fade-out-group {
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  transition: all 0.35s ease;
+}
+
+.fade-in-group {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.35s ease;
+}
+
+.flag-inline {
+  width: 22px;
+  height: 14px;
+  margin-right: 8px;
+  vertical-align: middle;
+  border-radius: 3px;
+
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
 .services {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 20px;
 }
 
@@ -402,18 +431,48 @@ footer {
 
 <section>
   <h2 data-i18n="servicesTitle">Our Services</h2>
-<p class="section-desc" data-i18n="servicesDesc">
-  Flexible programs for all levels.
-</p>
+  <p class="section-desc" data-i18n="servicesDesc">
+    Flexible programs for all levels.
+  </p>
+
   <div class="services">
-    <div class="service"><h3 data-i18n="s1">🇹🇭 Thai Language</h3>
-<p data-i18n="s1d">Daily life, work and travel</p>
-</div>
-    <div class="service"><h3 data-i18n="s2"></h3><p data-i18n="s2d"></p></div>
-    <div class="service"><h3 data-i18n="s3"></h3><p data-i18n="s3d"></p></div>
-    <div class="service"><h3 data-i18n="s4"></h3><p data-i18n="s4d"></p></div>
-    <div class="service"><h3 data-i18n="s5"></h3><p data-i18n="s5d"></p></div>
+
+    <div class="service">
+     <h3 class="service-title" data-i18n-group>
+     <img src="img/flags/th.svg" class="flag-inline">
+     <span data-i18n="s1"></span>
+    </h3>
+      <p data-i18n="s1d"></p>
+    </div>
+
+    <div class="service">
+      <h3 class="service-title" data-i18n-group>
+        <img src="img/flags/gb.svg" class="flag-inline">
+        <span data-i18n="s2"></span>
+      </h3>
+      <p data-i18n="s2d"></p>
+    </div>
+
+    <div class="service">
+      <h3 class="service-title" data-i18n-group>
+        <img src="img/flags/ch.svg" class="flag-inline">
+        <span data-i18n="s3"></span>
+      </h3>
+      <p data-i18n="s3d"></p>
+    </div>
+
+    <div class="service">
+      <h3 data-i18n="s4"></h3>
+      <p data-i18n="s4d"></p>
+    </div>
+
+    <div class="service">
+      <h3 data-i18n="s5"></h3>
+      <p data-i18n="s5d"></p>
+    </div>
+
   </div>
+
 </section>
 
 <section>
@@ -519,9 +578,9 @@ const t = {
     storyText3: "Our goal is to build students’ confidence so they can speak naturally and succeed in everyday conversations.",
     servicesTitle:"Our Services",
     servicesDesc:"Flexible programs for all levels.",
-    s1:"🇹🇭 Thai Language", s1d:"Daily life, work and travel",
-    s2:"🇬🇧 English Language", s2d:"Conversation and exams",
-    s3:"🇨🇳 Chinese Language", s3d:"Practical Mandarin for daily life and business",
+    s1:"Thai Language", s1d:"Daily life, work and travel",
+    s2:"English Language", s2d:"Conversation and exams",
+    s3:"Chinese Language", s3d:"Practical Mandarin for daily life and business",
     s4:"👩‍🏫 Private Classes", s4d:"One-on-one lessons",
     s5:"🏫 Group Classes", s5d:"Small interactive groups",
     galleryTitle:"Gallery",
@@ -541,9 +600,9 @@ const t = {
     storyText3:"เป้าหมายของเราคือสร้างความมั่นใจให้นักเรียน เพื่อให้สามารถพูดได้อย่างเป็นธรรมชาติในบทสนทนาประจำวัน",
     servicesTitle:"บริการของเรา",
     servicesDesc:"หลักสูตรยืดหยุ่น",
-    s1:"🇹🇭 ภาษาไทย", s1d:"ใช้ในชีวิตประจำวัน การทำงาน และท่องเที่ยว",
-    s2:"🇬🇧 ภาษาอังกฤษ", s2d:"ใช้ในชีวิตประจำวัน การทำงาน ท่องเที่ยว และสอบ",
-    s3:"🇨🇳 ภาษาจีน", s3d:"ภาษาจีนกลางเพื่อการใช้ในชีวิตประจำวันและธุรกิจ",
+    s1:"ภาษาไทย", s1d:"ใช้ในชีวิตประจำวัน การทำงาน และท่องเที่ยว",
+    s2:"ภาษาอังกฤษ", s2d:"ใช้ในชีวิตประจำวัน การทำงาน ท่องเที่ยว และสอบ",
+    s3:"ภาษาจีน", s3d:"ภาษาจีนกลางเพื่อการใช้ในชีวิตประจำวันและธุรกิจ",
     s4:"👩‍🏫 เรียนส่วนตัว", s4d:"ตัวต่อตัว",
     s5:"🏫 เรียนกลุ่ม", s5d:"กลุ่มเล็ก",
     galleryTitle:"แกลเลอรี่",
@@ -563,9 +622,9 @@ const t = {
     storyText3:"Наша цель — развить уверенность студентов, чтобы они могли естественно говорить и успешно общаться каждый день.",
     servicesTitle:"Наши услуги",
     servicesDesc:"Гибкие программы для всех уровней",
-    s1:"🇹🇭 Тайский язык", s1d:"Для жизни, работы и путешествий",
-    s2:"🇬🇧 Английский язык", s2d:"Разговорный английский и подготовка к экзаменам",
-    s3:"🇨🇳 Китайский язык", s3d:"Практический китайский для жизни и бизнеса",
+    s1:"Тайский язык", s1d:"Для жизни, работы и путешествий",
+    s2:"Английский язык", s2d:"Разговорный английский и подготовка к экзаменам",
+    s3:"Китайский язык", s3d:"Практический китайский для жизни и бизнеса",
     s4:"👩‍🏫 Индивидуально", s4d:"Персональные уроки с преподавателем",
     s5:"🏫 Групповые занятия", s5d:"Небольшие интерактивные группы",
     galleryTitle:"Галерея",
@@ -585,9 +644,9 @@ const t = {
     storyText3:"Notre objectif est de développer la confiance des étudiants afin qu’ils puissent parler naturellement et réussir leurs conversations quotidiennes.",
     servicesTitle:"Nos Services",
     servicesDesc:"Programmes flexibles pour tous les niveaux.",
-    s1:"🇹🇭 Langue Thaï", s1d:"Thaï pour la vie quotidienne, le travail et les voyages",
-    s2:"🇬🇧 Langue Anglaise", s2d:"Conversation et examens",
-    s3:"🇨🇳 Langue chinoise", s3d:"Mandarin pratique pour la vie quotidienne et les affaires",
+    s1:"Langue Thaï", s1d:"Thaï pour la vie quotidienne, le travail et les voyages",
+    s2:"Langue Anglaise", s2d:"Conversation et examens",
+    s3:"Langue chinoise", s3d:"Mandarin pratique pour la vie quotidienne et les affaires",
     s4:"👩‍🏫 Cours Privés", s4d:"Leçons individuelles",
     s5:"🏫 Cours en Groupe", s5d:"Petits groupes interactifs",
     galleryTitle:"Galerie",
@@ -601,11 +660,18 @@ const t = {
 
 function setLang(l){
   const elements = document.querySelectorAll("[data-i18n]");
+  const groups = document.querySelectorAll("[data-i18n-group]");
 
-  // Fade OUT
+  // Fade OUT text
   elements.forEach(el => {
     el.classList.remove("fade-in");
     el.classList.add("fade-out");
+  });
+
+  // Fade OUT grouped (flag + text)
+  groups.forEach(el => {
+    el.classList.remove("fade-in-group");
+    el.classList.add("fade-out-group");
   });
 
   setTimeout(() => {
@@ -617,15 +683,22 @@ function setLang(l){
 
     document.getElementById("langLabel").textContent = l.toUpperCase();
 
-    // Small delay before fade IN (IMPORTANT)
+    // Fade IN again
     setTimeout(() => {
+
       elements.forEach(el => {
         el.classList.remove("fade-out");
         el.classList.add("fade-in");
       });
+
+      groups.forEach(el => {
+        el.classList.remove("fade-out-group");
+        el.classList.add("fade-in-group");
+      });
+
     }, 50);
 
-  }, 250); // match CSS duration
+  }, 250);
 
   document.getElementById("langMenu").style.display = "none";
 }

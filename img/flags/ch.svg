@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+  <!-- Background -->
+  <rect width="60" height="30" fill="#EE1C25"></rect>
+
+  <!-- Big star (lowered slightly) -->
+  <g transform="translate(10,7)">
+    <polygon fill="#FFFF00" points="0,-4 0.95,-1.3 3.8,-1.3 1.4,0.5 2.3,3.2 0,1.6 -2.3,3.2 -1.4,0.5 -3.8,-1.3 -0.95,-1.3"></polygon>
+  </g>
+
+  <!-- Small stars (aligned to big star) -->
+  <g fill="#FFFF00">
+    <g transform="translate(20,4.5) rotate(-20)">
+      <polygon points="0,-1.6 0.38,-0.5 1.5,-0.5 0.6,0.2 1,1.3 0,0.7 -1,1.3 -0.6,0.2 -1.5,-0.5 -0.38,-0.5"></polygon>
+    </g>
+
+    <g transform="translate(24,8) rotate(5)">
+      <polygon points="0,-1.6 0.38,-0.5 1.5,-0.5 0.6,0.2 1,1.3 0,0.7 -1,1.3 -0.6,0.2 -1.5,-0.5 -0.38,-0.5"></polygon>
+    </g>
+
+    <g transform="translate(24,13) rotate(25)">
+      <polygon points="0,-1.6 0.38,-0.5 1.5,-0.5 0.6,0.2 1,1.3 0,0.7 -1,1.3 -0.6,0.2 -1.5,-0.5 -0.38,-0.5"></polygon>
+    </g>
+
+    <g transform="translate(20,17) rotate(45)">
+      <polygon points="0,-1.6 0.38,-0.5 1.5,-0.5 0.6,0.2 1,1.3 0,0.7 -1,1.3 -0.6,0.2 -1.5,-0.5 -0.38,-0.5"></polygon>
+    </g>
+  </g>
+</svg>
