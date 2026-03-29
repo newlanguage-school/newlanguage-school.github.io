@@ -1,0 +1,20 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="4" y="4" width="72" height="72" rx="18" fill="#F8FAFC"/>
+
+  <!-- Left page -->
+  <path d="M20 24c6-4 14-4 20 0v28c-6-4-14-4-20 0V24z" fill="#2563EB"/>
+
+  <!-- Right page -->
+  <path d="M60 24c-6-4-14-4-20 0v28c6-4 14-4 20 0V24z" fill="#DC2626"/>
+
+  <!-- Center spine -->
+  <line x1="40" y1="24" x2="40" y2="52" stroke="#1F2937" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Page lines -->
+  <line x1="26" y1="32" x2="36" y2="32" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <line x1="26" y1="38" x2="36" y2="38" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+
+  <line x1="44" y1="32" x2="54" y2="32" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <line x1="44" y1="38" x2="54" y2="38" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+</svg>
